@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600&family=Work+Sans:wght@400;500;600&display=swap");
 @import "utilities";
-@import "media";
+
 
 * {
   margin: 0;
@@ -336,7 +336,6 @@ nav {
     height: 100%;
     max-width: 850px;
     margin: 0 auto;
-    position: relative;
     .slide {
       width: 100%;
       display: flex;
@@ -351,7 +350,7 @@ nav {
         align-items: center;
         flex-direction: column;
         i {
-          font-size: 70px;
+          font-size: 4rem;
           position: absolute;
           bottom: 0;
           right: 0;
@@ -398,13 +397,15 @@ nav {
     }
     .buttons {
       position: absolute;
-      top: 315px;
-      left: 50%;
+      // top: 315px !important;
+      bottom: 0;
+      left: 50% !important;
       transform: translateX(-50%);
       width: 90px;
       height: 45px;
       border-radius: 50px;
-      box-shadow: var(--box-shadow-darker);
+      // box-shadow: var(--box-shadow-darker);
+      border: 1px solid var(--section-heading-color);
       background-color: var(--bg-color);
       overflow: hidden;
       .next,
@@ -564,46 +565,10 @@ nav {
     }
     input,
     textarea {
-      padding: 1.5rem;
       color: var(--font-color);
     }
-    ::-webkit-input-placeholder,
-    ::-moz-input-placeholder {
-      opacity: 0;
-      transition: inherit;
-    }
-    input:focus::-webkit-input-placeholder,
-    input:focus::-moz-input-placeholder {
-      opacity: 1;
-    }
-    input + label,
-    textarea + label {
-      position: absolute;
-      color: var(--font-color);
-      background-color: var(--bg-color);
-    }
-    input:placeholder-shown + label,
-    textarea:placeholder-shown + label {
-      left: 0.9em;
-      top: 0.5em;
-      font-size: 1.1em;
-      padding-left: 0;
-      padding-right: 0;
-      cursor: text;
-      transition: all 0.2s ease;
-    }
-    input:focus + label,
-    textarea:focus + label,
-    input:not(:placeholder-shown) + label,
-    textarea:not(:placeholder-shown) + label {
-      left: 1.2em;
-      top: -0.9em;
-      font-size: 0.9em;
-      cursor: default;
-      padding-left: 5px;
-      padding-right: 5px;
-      transition: all 0.2s ease;
-      border-radius: 10px;
+    textarea {
+      height: 100px;
     }
   }
   .submit-btn {
@@ -722,8 +687,10 @@ footer {
   padding-top: 3rem;
   text-align: center;
   color: var(--font-color);
-  a {
+  .useful-link {
+    position: relative;
     color: var(--font-color);
+    @include link-hover;
   }
   img {
     width: 40%;
@@ -771,3 +738,5 @@ footer {
     font-size: 1.1rem;
   }
 }
+
+@import "media";

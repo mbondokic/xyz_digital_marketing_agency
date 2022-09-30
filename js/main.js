@@ -1,3 +1,5 @@
+// Minify this file after modification
+
 // Testimonials
 let next = document.querySelector(".next");
 let prev = document.querySelector(".prev");
