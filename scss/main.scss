@@ -687,6 +687,9 @@ footer {
   padding-top: 3rem;
   text-align: center;
   color: var(--font-color);
+  a {
+    color: var(--font-color);
+  }
   .useful-link {
     position: relative;
     color: var(--font-color);
@@ -736,6 +739,11 @@ footer {
   }
   .copyright {
     font-size: 1.1rem;
+    a {
+      position: relative;
+      color: var(--font-color);
+      @include link-hover;
+    }
   }
 }
 
